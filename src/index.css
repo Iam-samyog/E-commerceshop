@@ -1,0 +1,271 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+@import url(https://db.onlinewebfonts.com/c/f1fcc5aed1e20fc0cdb9f8a7573625bd?family=Integral+CF+Regular);
+@import "tailwindcss";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+
+
+:root{
+    --primary-font:"Integral CF Regular";
+    --secondary-font:'Satoshi', sans-serif;
+
+
+}
+.primary-font{
+    font-family: var(--primary-font);
+}
+.secondary-font{
+    font-family: var(--secondary-font);
+    
+}
+
+.main-background{
+    background-color: #F2F0F1;
+}
+.main-btn {
+    background-color: black;
+    color: white;
+    font-family: var(--secondary-font);
+   text-align:center ;
+    padding: 15px 52px;
+    border-radius: 62px;
+    
+}
+
+.main-btn:hover {
+   background-color: rgba(0, 0, 0, 0.804);
+}
+
+
+.main-right-part {
+    display: flex;
+    justify-content: center;
+    /* text-align: end; */
+    /* padding-left:100px; */
+    margin-left: 80px;
+}
+
+.image-container {
+    position: relative; /* Ensures absolute children stay within this container */
+    width: 650px; /* Adjust based on your actual image size */
+    height: auto;
+    display: inline-block;
+    overflow: hidden; /* Prevents elements from going outside */
+}
+
+
+
+@keyframes twinkle {
+    0% { opacity: 0.95; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0.95; transform: scale(1); }
+}
+
+.decor {
+    position: absolute;
+    /* Adjust size of the decorative elements */
+    height: auto;
+    animation: twinkle 1.5s infinite ease-in-out alternate; 
+}
+
+/* Positioning of the elements */
+.decor-1 {
+    top: 10%; /* Adjust the position */
+    right: 10%;
+    width:100px;
+    animation-delay: 1s; /* Slight delay for variation */
+}
+
+.decor-2 {
+    bottom: 40%;
+    width:60px;
+    left: 7%;
+    animation-delay: 1.5s; /* Slight delay for variation */
+}  
+@media (max-width: 768px) {
+    .main-btn {
+      width: 100%;
+      padding: 12px 30px;
+    }
+    .decor-1 {
+        width: 40px;
+        top: 5%;
+        right: 12%;
+      }
+      
+      .decor-2 {
+        width: 30px;
+        bottom: 30%;
+        left: 8%;
+      }
+  
+    
+   
+  }
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .decor-1 {
+      width: 80px;
+      top: 5%;
+      right: 10%;
+    }
+    
+    .decor-2 {
+      width: 40px;
+      bottom: 30%;
+      left: 10%;
+    }
+  } 
+
+
+.price-container .old-price{
+    text-decoration:line-through;
+    color:#999;
+
+
+}
+.price-container .discount {
+    background-color: rgba(255, 99, 71, 0.2);
+    color: tomato;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 8px;
+    border-radius: 8px;
+}
+
+.product-image-container img {
+    /* Match the rounded corners */
+/* Ensure the image is above the black background */
+    transition: transform 0.5s ease;
+}
+
+
+
+.product-image-container:hover img {
+    transform: scale(1.1); /* Optional: Slight zoom effect on hover */
+}
+
+
+.card-container {
+      transition: transform 0.3s ease;
+    }
+    .card-container:hover {
+      transform: scale(1.03);
+    }
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+      height: 50%;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .card-container:hover .card-overlay {
+      opacity: 1;
+    }
+
+
+.newletter-btn:hover{
+    background-color: black;
+    color:white;
+    border:2px solid white;
+    
+}
+
+/* Responsive for tablets and so  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   
+   
+    .tablet-search {
+    display: none!important;
+    }
+    .tablet-menu {
+      gap: 16px !important;
+    }
+    .tablet-text-sm {
+        font-size: 16px !important;
+        white-space: nowrap!important;
+    }
+    .tablet-search-display{
+        display:block!important;
+    }
+  
+  }
+@media (min-width: 1024px) and (max-width:1280px) {
+      
+    
+      .tablet-search {
+        display: none!important;
+        }
+      .tablet-menu {
+        gap: 16px !important;
+      }
+      .tablet-text-sm {
+          font-size: 16px !important;
+          white-space: nowrap;
+      }
+      .tablet-search-display{
+        display: block !important;
+    }
+    .main-right-part{
+        display: none;
+      }
+    
+   
+   
+   
+      
+  }
+@media (min-width: 1350px) and (max-width:1600px) {
+      
+    .tablet-search {
+        width: 100% !important;
+        max-width: 550px;
+      }
+      .tablet-menu {
+        gap: 16px !important;
+      }
+      .tablet-text-sm {
+          font-size: 14px !important;
+          white-space: nowrap!important;
+      }
+    
+    
+ 
+    
+  }
+  /* Add these to your CSS */
+.image-container img:first-child {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    width: 100%; /* Make container full width on mobile */
+    max-width: 450px; /* Limit maximum width */
+    margin: 0 auto; /* Center it */
+  }
+  
+  .main-right-part {
+    margin-left: 0; /* Remove left margin on mobile */
+    justify-content: center; /* Center the content */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .image-container {
+    width: 90%; /* Slightly less than full width on tablets */
+    max-width: 550px;
+  }
+  
+  .main-right-part {
+    margin-left: 40px; /* Reduce left margin on tablets */
+  }
+}
+  
+/* Responsive for end tablets and so  */
